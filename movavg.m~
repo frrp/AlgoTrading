@@ -1,0 +1,19 @@
+% It plots the moving average of a stock.
+% For the input argument int, use
+% 1 - open, 2 - high, 3 - low, 4 - close.
+% day - how many days back do you want to calculate the moving average
+% from.
+
+function movavg(s,day)
+
+    int = 4;
+    
+    % Form a new matrix.
+    for (i = day:length(s))
+       
+        for (j = 1:day)
+            tot = S(i,4)
+        
+    end
+
+end

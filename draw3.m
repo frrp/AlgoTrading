@@ -1,0 +1,8 @@
+subplot(2,2,1)
+stoc(SIA,14,3,4,20,85,67)
+subplot(2,2,2)
+stoc(UOB,14,3,4,20,85,67)
+subplot(2,2,3)
+stoc(OSIM,14,3,4,20,85,67)
+subplot(2,2,4)
+stoc(KIMENG,14,3,4,20,85,67)

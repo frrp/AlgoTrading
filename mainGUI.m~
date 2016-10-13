@@ -1,0 +1,72 @@
+% This MATLAB script creatives the main GUI for selecting our stocks.
+
+function mainGUI(one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve)
+
+close all;
+figure;
+
+titlebox = uicontrol('style','text','Position',[0.1 0.7 0.8 0.2],'Units','normalized','BackgroundColor',[0.8 0.8 0.8],...
+    'String','Phillip Securities Stock Analyzer v. 1.0','FontName','Monaco','FontSize',24);
+
+text1 = uicontrol('style','text','Position',[0.1 0.5 0.8 0.2],'Units','normalized','BackgroundColor',[0.8 0.8 0.8],...
+    'String','Select your stock:','FontName','Monaco','FontSize',18);
+
+stock = uicontrol('style','popup','Position',[0.1 0.4 0.8 0.25],'Units','normalized','BackgroundColor',[0.8 0.8 0.8],...
+    'String','CREATIVE|DBS|FandN|KEPCORP|KIMENG|OSIM|SIA|SPH|STARHUB|UOB|UOL|WILMAR','FontName','Monaco','FontSize',18);
+
+text2 = uicontrol('style','text','Position',[0.1 0.4 0.8 0.1],'Units','normalized','BackgroundColor',[0.8 0.8 0.8],...
+    'String','Select your indicator(s):','FontName','Monaco','FontSize',18);
+
+selectind = uibuttongroup('Parent',gcf,...
+        'BackgroundColor',[0.8 0.8 0.8],'FontName','Monaco',... 
+        'Position',[.15 .25 .7 .15]);
+
+indmoving = uicontrol(selectind,'style','checkbox','Position',[0.06 0.7 0.5 0.2],'Units','normalized','BackgroundColor',[0.8 0.8 0.8],...
+    'String','Moving Averages','FontName','Monaco','FontSize',10,'Value',1);  
+
+indbol = uicontrol(selectind,'style','checkbox','Position',[0.06 0.5 0.5 0.2],'Units','normalized','BackgroundColor',[0.8 0.8 0.8],...
+    'String','Bollinger Band','FontName','Monaco','FontSize',10,'Value',1); 
+
+indmACD = uicontrol(selectind,'style','checkbox','Position',[0.06 0.3 0.5 0.2],'Units','normalized','BackgroundColor',[0.8 0.8 0.8],...
+    'String','MACD','FontName','Monaco','FontSize',10,'Value',1); 
+
+indstoc = uicontrol(selectind,'style','checkbox','Position',[0.06 0.1 0.5 0.2],'Units','normalized','BackgroundColor',[0.8 0.8 0.8],...
+    'String','Stochastic','FontName','Monaco','FontSize',10,'Value',1); 
+
+exec = uicontrol(gcf,'style','pushbutton','Position',[0.4 0.1 0.3 0.1],'Units','normalized','BackgroundColor',[0.8 0.8 0.8],...
+    'String','Execute','FontName','Monaco','FontSize',10,'Callback',@execute);
+
+function execute(src,evt)
+    stockno = get(stock,'Value');
+    switch stockno
+        case {1}
+            mainwindow(one,1,1,1,1);
+        case {2}
+            mainwindow(two,1,1,1,1);
+        case {3}
+            mainwindow(one,1,1,1,1);
+        case {4}
+            mainwindow(four,1,1,1,1);
+        case {5}
+            mainwindow(five,1,1,1,1);
+        case {6}
+            mainwindow(six,1,1,1,1);
+        case {7}
+            mainwindow(seven,1,1,1,1);
+        case {8}
+            mainwindow(eight,1,1,1,1);
+        case {9}
+            mainwindow(nine,1,1,1,1);
+        case {10}
+            mainwindow(ten,1,1,1,1);
+        case {11}
+            mainwindow(eleven,1,1,1,1);
+        case {12}
+            mainwindow(twelve,1,1,1,1);
+    end
+end
+
+
+set(gcf,'Position',[100 500 500 700]);
+
+end

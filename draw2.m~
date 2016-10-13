@@ -1,0 +1,29 @@
+% This draws the main display, showing three indicators - Bellinger,
+% Stochastic and MACD - and their enter, exit strategy. We also calculate
+% various PnL and ratios to see how profitable is this strategy.
+
+function draw2(S)
+    
+    close all;
+    % We first plot the three indicators.
+    
+
+    % The Bollinger band indicator.
+    subplot(9,5,[1:3 6:8 11:13])
+    stddev(S);
+    % subplot(9,5,[4:5 9:10 14:15])
+
+    % The stochastic indicator.
+    subplot(9,5,[16:18 21:23 26:28])
+    stoc(S,14,3,3);
+
+    mTextBox1 = uicontrol('style','text','Position',[0.6 0.8 0.35 0.1],'Units','normalized')
+    set(mTextBox1,'String','Enter Strategy')
+    set(mTextBox1,'Units','characters')
+    
+    mTextBox2 = uicontrol('style','text','Position',[0.6 0.7 0.35 0.1],'Units','normalized')
+    set(mTextBox2,'String','Bollinger Band')
+    set(mTextBox2,'Units','characters')
+    
+    set([mTextBox1 mTextBox2],'FontName','Monaco');
+end

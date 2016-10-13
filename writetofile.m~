@@ -1,0 +1,23 @@
+
+
+fid = fopen('writetest.csv','w');
+
+fprintf(fid,'Date,OPEN,HIGH,LOW,LAST_PRICE,VOLUME,Value\n');
+
+for (i = 1:200)%length(Data(:,1)))
+    
+thisdate = num2str( Data(i,1) );
+thisdate = strcat([thisdate(1:length(thisdate)-6) '/' thisdate(length(thisdate)-5:length(thisdate)-4) '/' thisdate(length(thisdate)-3:length(thisdate))])
+    
+fprintf(fid,'%s',thisdate);
+
+thistime = num2str( Data(i,2) );
+thisdate = strcat([thistime(1:length(thistime)-2) ':' thistime(length(thistime)-1:length(thistime)-4) ]);
+
+fprintf(fid,'%s',thistime);
+
+fprintf(fid,'%3.2f,%3.2f,%3.2f,%3.2f,%6.0f,%7.0f\n',Data(i,3:8));
+
+end
+
+fclose(fid);
